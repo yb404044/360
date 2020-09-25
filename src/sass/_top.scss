@@ -1,0 +1,233 @@
+            //小广告
+            .banner-small {
+                width: 100%;
+                height: 90px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            
+            //顶部小盒子
+            .wrap-head-smallbox {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                background-color: #333;
+                .head-smallbox {
+                    width: $innerwidth;
+                    height: 40px;
+                    display: flex;
+                    justify-content: space-between;
+                    .head-smallbox-left a {
+                        font-size: 12px;
+                        margin-right: 25px;
+                        line-height: 40px;
+                        color: white;
+                    }
+                    .head-smallbox-right a {
+                        font-size: 12px;
+                        margin-left: 25px;
+                        line-height: 40px;
+                        color: white;
+                    }
+                    .head-smallbox-right i {
+                        background-image: url(../img/t019bd9e375d813e9d1.png);
+                        background-repeat: no-repeat;
+                        background-size: 200px 240px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        height: 22px;
+                        width: 24px;
+                        background-position: -140px -49px;
+                        margin: -4px 0 0 25px;
+                    }
+                }
+            }
+            
+            //头部nav
+            .wrap-head-nav {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                background-color: white;
+                .head-nav {
+                    width: $innerwidth;
+                    height: 102px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+                    i {
+                        background: url(https://p.ssl.qhimg.com/t0102789b8d00c3dfce.png) no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        height: 36px;
+                        width: 180px;
+                        display: inline-block;
+                    }
+                    .head-nav-one {
+                        width: 500px;
+                    }
+                    .head-nav-one a {
+                        margin-right: 50px;
+                        font-size: 18px;
+                        color: #333;
+                    }
+                    .head-nav-two {
+                        width: 420px;
+                        height: 36px;
+                        border: 1px solid #ccc;
+                        border-radius: 18px;
+                        text-align: center;
+                    }
+                    .head-nav-two div {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 7px 0 10px 0;
+                    }
+                    .head-nav-two input {
+                        width: 340px;
+                        height: 24px;
+                        border: none;
+                        outline: none;
+                    }
+                    .head-nav-two i {
+                        background-image: url(../img/t019bd9e375d813e9d1.png  );
+                        background-repeat: no-repeat;
+                        background-size: 200px 240px;
+                        display: inline-block;
+                        background-position: -170px -48px;
+                        height: 24px;
+                        width: 24px;
+                    }
+                    .head-nav-two a {
+                        font-size: 12px;
+                        color: #666;
+                        margin-right: 10px;
+                    }
+                    //下拉菜单
+                    .menu-list {
+                        width: 230px;
+                        height: 530px;
+                        position: absolute;
+                        z-index: 10;
+                        left: 0;
+                        top: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        p {
+                            width: 230px;
+                            height: 50px;
+                            line-height: 50px;
+                            text-align: center;
+                            font-size: 16px;
+                            a {
+                                color: #fff;
+                            }
+                            background: rgba(51, 51, 51, 0.7);
+                            i {
+                                background: url(https://p.ssl.qhimg.com/t01bd7a5051ca7bcc11.png) no-repeat;
+                                background-size: 15px 15px;
+                                height: 15px;
+                                vertical-align: -2px;
+                                width: 15px;
+                                display: inline-block;
+                            }
+                        }
+                        >li {
+                            flex-grow: 1;
+                            display: flex;
+                            align-items: center;
+                            color: #fff;
+                            background: rgba(51, 51, 51, 0.6);
+                            padding-left: 60px;
+                            a {
+                                font-size: 14px;
+                                color: #fff;
+                            }
+                        }
+                        >li:hover {
+                            background: rgba(51, 51, 51, 0.7);
+                        }
+                        >li:hover ol>li {
+                            // visibility: visible;
+                            display: block;
+                        }
+                    }
+                    ol {
+                        >li {
+                            height: 530px;
+                            width: 950px;
+                            position: absolute;
+                            left: 230px;
+                            top: 0px;
+                            display: none;
+                            background: rgba(51, 51, 51, 0.7);
+                        }
+                    }
+                }
+            }
+            
+            //大广告
+            .banner-big {
+                width: 100%;
+                height: 530px;
+                // background-color: cyan;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: -1;
+                }
+                .left {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    margin-left: -360px;
+                    margin-top: -36px;
+                    width: 42px;
+                    height: 72px;
+                    border-radius: 2px;
+                    opacity: 0.5;
+                    background-image: url(https://p.ssl.qhimg.com/t01f23388c6d94b6dfb.png);
+                    background-repeat: no-repeat;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    background-position: -179px -143px;
+                }
+                .right {
+                    width: 42px;
+                    height: 72px;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    position: absolute;
+                    margin-top: -36px;
+                    margin-right: -590px;
+                    border-radius: 2px;
+                    right: 50%;
+                    top: 50%;
+                    opacity: 0.5;
+                    background-image: url(https://p.ssl.qhimg.com/t01f23388c6d94b6dfb.png);
+                    background-repeat: no-repeat;
+                    background-position: -177px -74px;
+                }
+                ol {
+                    position: absolute;
+                    left: 50%;
+                    bottom: 5px;
+                    width: 158px;
+                    height: 28px;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    li {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        border: 2px solid #000;
+                    }
+                }
+            }
