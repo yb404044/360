@@ -1,0 +1,212 @@
+//底部的上半部分
+.footer-top-wrap {
+    width: 100%;
+    height: 367px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .footer-top {
+        width: $innerwidth;
+        height: 100%;
+        margin-top: 60px;
+        display: flex;
+        .footer-top-left {
+            flex-grow: 1;
+            display: flex;
+            p:nth-of-type(1) {
+                font-size: 18px;
+                font-weight: 900;
+                color: #333;
+                margin-bottom: 27px;
+            }
+            .one {
+                width: 264px;
+                margin-right: 60px;
+                >p:nth-of-type(2) {
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: #333;
+                }
+                >div {
+                    width: 264px;
+                    height: 1px;
+                    background-color: #333;
+                    margin: 19px 0 20px 0;
+                }
+                >p:nth-of-type(3) span {
+                    vertical-align: middle;
+                    font-size: 14px;
+                    color: #333;
+                }
+                >p:nth-of-type(3)>span:nth-of-type(2) {
+                    vertical-align: middle;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    margin-left: 15px;
+                    background: url(../img/t019bd9e375d813e9d1.png) no-repeat;
+                    background-position: -8px -160px;
+                }
+                >p:nth-of-type(3)>span:nth-of-type(3) {
+                    vertical-align: middle;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    margin-left: 15px;
+                    background: url(../img/t019bd9e375d813e9d1.png) no-repeat;
+                    background-position: -40px -160px;
+                }
+            }
+            .two {
+                width: 130px;
+                margin-right: 60px;
+                a {
+                    color: #666;
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+                p:nth-of-type(1) {
+                    margin-bottom: 27px;
+                }
+                p {
+                    margin-bottom: 6px;
+                }
+            }
+            .three {
+                width: 98px;
+                margin-right: 60px;
+                a {
+                    color: #666;
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+                p:nth-of-type(1) {
+                    margin-bottom: 27px;
+                }
+                p {
+                    margin-bottom: 6px;
+                }
+            }
+            .four {
+                width: 128px;
+                margin-right: 60px;
+                p:nth-of-type(1) {
+                    text-indent: 8px;
+                }
+                img {
+                    width: 128px;
+                    height: 128px;
+                }
+            }
+        }
+        .footer-top-right {
+            width: 301px;
+            height: 230px;
+            border-left: 1px solid #979797;
+            p {
+                text-align: center;
+            }
+            >p:nth-of-type(1) {
+                font-size: 18px;
+                color: #333;
+                font-weight: 900;
+                margin-bottom: 27px;
+            }
+            >p:nth-of-type(2) {
+                font-size: 28px;
+                color: #333;
+                font-weight: 900;
+                margin-bottom: 3px;
+            }
+            >p:nth-of-type(3) {
+                font-size: 14px;
+                color: #999;
+            }
+        }
+    }
+}
+
+//底部的下半部分
+.footer-bottom-wrap {
+    position: relative;
+    z-index: 1000px;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .footer-bottom {
+        width: $innerwidth;
+        height: 100%;
+        .top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 81px;
+            border-bottom: 1px solid #666;
+            margin-bottom: 18px;
+            a {
+                font-size: 24px;
+                color: #FFF;
+                margin-right: 150px;
+            }
+            >a:nth-last-child(3) {
+                vertical-align: middle;
+                >b {
+                    margin-right: 5px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    width: 32px;
+                    height: 30px;
+                    background: url(../img/t019bd9e375d813e9d1.png);
+                    background-position: -9px 283px;
+                }
+            }
+            >a:nth-last-child(2) {
+                vertical-align: middle;
+                >b {
+                    margin-right: 5px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    width: 32px;
+                    height: 30px;
+                    background: url(../img/t019bd9e375d813e9d1.png);
+                    background-position: -45px 283px;
+                }
+            }
+            >a:nth-last-child(1) {
+                vertical-align: middle;
+                margin-right: 0;
+                >b {
+                    margin-right: 5px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    width: 32px;
+                    height: 30px;
+                    background: url(../img/t019bd9e375d813e9d1.png);
+                    background-position: -80px 283px;
+                }
+            }
+        }
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 119px;
+            >p {
+                font-size: 14px;
+                color: #FFF;
+                line-height: 20px;
+            }
+            >p:nth-of-type(3) {
+                font-size: 12px;
+                color: #FFFFFF80;
+            }
+            >p:nth-of-type(4) {
+                font-size: 12px;
+                color: #FFFFFF80;
+            }
+        }
+    }
+}

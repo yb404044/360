@@ -1,6 +1,17 @@
 $innerwidth:1180px;
 $initbgcolor:#f0f0f0;
 $initftcolor:#666;
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +20,11 @@ $initftcolor:#666;
 body {
     background-color: $initbgcolor;
     color: $initftcolor;
+}
+
+html,
+body {
+    height: 100%;
 }
 
 .wrap {
