@@ -69,7 +69,7 @@
     img {
         height: 380px;
     }
-    .right {
+    .right-a {
         flex-grow: 1;
         height: 400px;
         .right-box {
@@ -370,7 +370,14 @@
 .mod-smart {
     // height: 993px;
     width: $innerwidth;
+    // width: 1200px;
     // background-color: #111;
+    >div:nth-of-type(2) {
+        margin: 0 0 20px 0;
+    }
+    >div:nth-of-type(6) {
+        margin: 0 0 20px 0;
+    }
     img {
         width: 580px;
         height: 460px;

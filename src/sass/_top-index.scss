@@ -1,11 +1,15 @@
             //遮罩
             .zhezhao {
-                position: absolute;
-                left: 0;
-                top: 0;
+                // position: absolute;
+                // left: 0;
+                // top: 0;
+                // bottom: 0;
+                // right: 0;
                 z-index: 10000;
                 width: 100%;
                 height: 100%;
+                position: fixed;
+                ;
                 background-color: rgba(28, 28, 30, .75);
                 >div {
                     position: fixed;
@@ -230,23 +234,35 @@
                         >li:nth-of-type(1)>b {
                             background: url(../img/luyouqi.webp);
                         }
-                        >li:hover {
+                        // >li:hover {
+                        //     background: rgba(51, 51, 51, 0.7);
+                        // }
+                        >li.active {
                             background: rgba(51, 51, 51, 0.7);
                         }
-                        >li:hover ol>li {
-                            // visibility: visible;
-                            display: block;
-                        }
+                        // >li:hover ol>li {
+                        //     // visibility: visible;
+                        //     display: block;
+                        // }
                     }
-                    ol {
-                        >li {
-                            height: 530px;
+                    .menu-list-two {
+                        z-index: 5;
+                        height: 530px;
+                        width: 950px;
+                        position: absolute;
+                        left: 230px;
+                        top: 102px;
+                        background: rgba(51, 51, 51, 0.7);
+                        display: none;
+                        >div.item {
+                            z-index: 0;
                             width: 950px;
-                            position: absolute;
-                            left: 230px;
-                            top: 0px;
+                            height: 530px;
                             display: none;
-                            background: rgba(51, 51, 51, 0.7);
+                            a {
+                                font-size: 25px;
+                                color: cornsilk;
+                            }
                         }
                     }
                 }
@@ -265,6 +281,7 @@
                     left: 0;
                     top: 0;
                     z-index: -1;
+                    opacity: 0;
                 }
                 .left {
                     position: absolute;
@@ -275,10 +292,10 @@
                     width: 42px;
                     height: 72px;
                     border-radius: 2px;
-                    opacity: 0.5;
+                    opacity: 0.2;
                     background-image: url(https://p.ssl.qhimg.com/t01f23388c6d94b6dfb.png);
                     background-repeat: no-repeat;
-                    background-color: rgba(0, 0, 0, 0.4);
+                    background-color: rgb(0, 0, 0);
                     background-position: -179px -143px;
                 }
                 .right {
@@ -310,6 +327,9 @@
                         height: 10px;
                         border-radius: 50%;
                         border: 2px solid #000;
+                    }
+                    li.active {
+                        background-color: #fff;
                     }
                 }
             }
