@@ -78,7 +78,6 @@
                .head-nav-two {
                    width: 420px;
                    height: 36px;
-                   border: 1px solid #ccc;
                    border-radius: 18px;
                    text-align: center;
                }
@@ -316,6 +315,238 @@
                        color: #999;
                    }
                }
+           }
+       }
+       
+       //    购物车页面
+       .cart {
+           width: 1020px;
+           .cart-top {
+               margin-top: 19px;
+               width: 1020px;
+               background-color: #fff;
+               height: 50px;
+               display: flex;
+               align-items: center;
+               >span {
+                   text-align: center;
+                   color: rgba(51, 51, 51, 1);
+                   font-size: 14px;
+                   font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+                   font-weight: 700;
+               }
+               >span:nth-of-type(1) {
+                   margin-left: 8px;
+                   width: 62px;
+               }
+               >span:nth-of-type(2) {
+                   width: 352px;
+               }
+               >span:nth-of-type(3) {
+                   width: 200px;
+               }
+               >span:nth-of-type(4) {
+                   width: 105px;
+               }
+               >span:nth-of-type(5) {
+                   width: 106px;
+               }
+               >span:nth-of-type(6) {
+                   width: 106px;
+               }
+               >span:nth-of-type(7) {
+                   width: 105px;
+               }
+           }
+           .youhui {
+               display: flex;
+               height: 50px;
+               align-items: center;
+               .youhui-left {
+                   color: rgba(51, 51, 51, 1);
+                   font-size: 14px;
+                   font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+                   font-weight: 700;
+                   margin-left: 21px;
+               }
+               .youhui-right {
+                   background: url(https://p2.ssl.qhimg.com/t01a4c2182bcdd8ea59.png) no-repeat;
+                   color: #f33;
+                   cursor: pointer;
+                   float: left;
+                   font-size: 12px;
+                   height: 21px;
+                   line-height: 21px;
+                   margin-left: 10px;
+                   position: relative;
+                   text-align: center;
+                   text-indent: 0;
+                   width: 55px;
+                   font-weight: 700;
+               }
+           }
+           .cart-content {
+               width: 1020px;
+               background-color: #fff;
+               height: 107px;
+               display: flex;
+               align-items: center;
+               border-bottom: 1px solid #ddd;
+               >div {
+                   text-align: center;
+               }
+               >div:nth-of-type(1) {
+                   width: 62px;
+                   height: 100%;
+                   display: flex;
+                   align-items: center;
+                   justify-content: center;
+                   border-bottom: 1px solid #fff;
+               }
+               >div:nth-of-type(2) {
+                   display: flex;
+                   width: 352px;
+                   >img {
+                       border: 1px solid #ddd;
+                       border-radius: 5px;
+                       height: 68px;
+                       width: 68px;
+                   }
+                   >p {
+                       margin-left: 10px;
+                       display: flex;
+                       flex-direction: column;
+                       text-align: left;
+                       >span {
+                           color: #333;
+                           font-size: 14px;
+                       }
+                   }
+               }
+               >div:nth-of-type(3) {
+                   width: 200px;
+                   font-size: 14px;
+                   color: #333;
+               }
+               >div:nth-of-type(4) {
+                   width: 105px;
+                   font-size: 14px;
+                   color: #333;
+                   margin-top: 10px;
+               }
+               >div:nth-of-type(5) {
+                   width: 106px;
+                   .number {
+                       display: flex;
+                       margin-top: 16px;
+                       //    >span:nth-of-type(2) {
+                       //        font-size: 14px;
+                       //        margin-right: 10px;
+                       //        margin-left: 15px;
+                       //        color: #999;
+                       //        line-height: 30px;
+                       //    }
+                       >span:nth-of-type(1) {
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+                           background-color: #fff;
+                           color: #999999;
+                           font-size: 14px;
+                           border: 1px solid #ddd;
+                           margin-left: -1px;
+                           width: 42px;
+                           height: 28px;
+                       }
+                       >button:nth-of-type(1) {
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+                           width: 28px;
+                           height: 28px;
+                           color: #DDD;
+                           background-color: #fff;
+                           font-size: 16px;
+                           border: 1px solid #ddd;
+                           box-sizing: content-box;
+                       }
+                       >button:nth-of-type(2) {
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+                           width: 28px;
+                           height: 28px;
+                           color: #333;
+                           background-color: #f6f6f6;
+                           font-size: 16px;
+                           border: 1px solid #ddd;
+                           box-sizing: content-box;
+                           margin-left: -1px;
+                       }
+                   }
+               }
+               >div:nth-of-type(6) {
+                   width: 106px;
+                   font-size: 14px;
+                   color: #FF3333;
+               }
+               >div:nth-of-type(7) {
+                   width: 105px;
+                   font-size: 14px;
+                   color: #333;
+               }
+           }
+       }
+       
+       //resolve
+       .cart-resolve {
+           margin-bottom: 29px;
+           margin-top: 19px;
+           width: 1020px;
+           background-color: #fff;
+           height: 72px;
+           display: flex;
+           align-items: center;
+           >span {
+               text-align: center;
+               color: rgba(51, 51, 51, 1);
+               font-size: 14px;
+               font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+               font-weight: 700;
+           }
+           >span:nth-of-type(1) {
+               margin-left: 8px;
+               width: 62px;
+           }
+           >span:nth-of-type(2) {
+               text-align: left;
+               width: 462px;
+               font-size: 14px;
+               margin-left: 20px;
+               color: #333;
+           }
+           >p {
+               >b:nth-of-type(1) {
+                   font-size: 16px;
+                   color: #333;
+               }
+               >b:nth-of-type(2) {
+                   font-size: 14px;
+                   color: #ff3333;
+               }
+           }
+           >span:nth-of-type(3) {
+               background: linear-gradient(180deg, rgba(255, 51, 51, 1) 0, rgba(255, 102, 51, 1) 100%);
+               border-radius: 6px;
+               color: #fff;
+               cursor: pointer;
+               display: inline-block;
+               font-size: 20px;
+               height: 50px;
+               line-height: 50px;
+               text-align: center;
+               width: 160px;
+               margin-left: 55px;
            }
        }
        

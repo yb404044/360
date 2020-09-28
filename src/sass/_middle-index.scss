@@ -47,6 +47,12 @@
         width: 280px;
         height: 242px;
         border-radius: 5px;
+        transition: 0.2s all ease-out;
+    }
+    img:hover {
+        background: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
     }
 }
 
@@ -61,18 +67,38 @@
     display: inline-block;
 }
 
+.shijian {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #333;
+    color: #fff;
+    flex: 17px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: 18px;
+}
+
 .mod-limit {
     display: flex;
     // height: 443px;
     width: $innerwidth;
     // background-color: #111;
-    img {
+    >img {
         height: 380px;
+        transition: 0.2s all ease-out;
+    }
+    >img:hover {
+        background: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
     }
     .right-a {
         flex-grow: 1;
         height: 400px;
         .right-box {
+            transition: 0.2s all ease-out;
             width: 420px;
             height: 150px;
             margin: 0 0 20px 20px;
@@ -113,6 +139,11 @@
                     text-align: center;
                 }
             }
+        }
+        >.right-box:hover {
+            // background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
         }
     }
 }
@@ -521,6 +552,7 @@
     top: 50%;
     right: 50%;
     margin-right: 598px;
+    display: none;
     a {
         display: block;
         width: 80px;
@@ -532,11 +564,17 @@
             box-sizing: border-box;
             text-align: center;
             line-height: 30px;
-            width: 60px;
+            width: 80px;
             height: 30px;
             font-size: 12px;
             color: #666;
             border-bottom: 1px solid #eee;
+        }
+        >li.active {
+            width: 100;
+            color: #dd0e00;
+            background: #f6f6f6;
+            font-weight: 800;
         }
     }
 }
@@ -621,36 +659,40 @@
 }
 
 //我已经陪你到底了
-.bottom-title {
-    width: 334px;
-    height: 34px;
-    columns: #666;
-    font-size: 18px;
-    text-align: center;
-    line-height: 100%;
-    position: relative;
+.wrapwrap {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-     ::before {
-        background: #333;
-        content: '';
-        display: block;
-        height: 1px;
-        position: absolute;
-        width: 90px;
-        left: 0;
-        top: 17px;
-    }
-     ::after {
-        background: #333;
-        content: '';
-        display: block;
-        height: 1px;
-        position: absolute;
-        width: 90px;
-        right: 0;
-        top: 17px;
+    .bottom-title {
+        width: 334px;
+        height: 34px;
+        columns: #666;
+        font-size: 18px;
+        text-align: center;
+        line-height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+         ::before {
+            background: #333;
+            content: '';
+            display: block;
+            height: 1px;
+            position: absolute;
+            width: 90px;
+            left: 0;
+            top: 17px;
+        }
+         ::after {
+            background: #333;
+            content: '';
+            display: block;
+            height: 1px;
+            position: absolute;
+            width: 90px;
+            right: 0;
+            top: 17px;
+        }
     }
 }

@@ -205,11 +205,11 @@ ol {
   width: 1250px;
 }
 
-.render-list li {
+.render-list a li {
   float: left;
   width: 240px;
   height: 335px;
-  margin: 0 10px 15px 0;
+  margin: 0 8px 15px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -224,24 +224,30 @@ ol {
   border: 1px solid #E4E4E4;
 }
 
-.render-list li > img {
+.render-list a li > img {
   width: 165px;
   height: 165px;
   margin: 40px 0 10px 0;
 }
 
-.render-list li > p:nth-of-type(1) {
+.render-list a li > p:nth-of-type(1) {
   font-size: 14px;
   color: #31373c;
+  width: 240px;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  text-align: center;
 }
 
-.render-list li > p:nth-of-type(2) {
+.render-list a li > p:nth-of-type(2) {
   font-size: 14px;
   color: #FA5473;
   margin-top: 10px;
 }
 
-.render-list li > p:nth-of-type(3) {
+.render-list a li > p:nth-of-type(3) {
   width: 122px;
   height: 30px;
   display: -webkit-box;
@@ -260,7 +266,7 @@ ol {
   display: none;
 }
 
-.render-list li > p:nth-of-type(3) span {
+.render-list a li > p:nth-of-type(3) span {
   display: inline-block;
   width: 16px;
   height: 14px;
@@ -269,13 +275,13 @@ ol {
   margin-right: 5px;
 }
 
-.render-list li > p:nth-of-type(3):hover {
+.render-list a li > p:nth-of-type(3):hover {
   color: #fff;
   background-color: #fc0d18;
   border: 0;
 }
 
-.render-list li > p:nth-of-type(3):hover span {
+.render-list a li > p:nth-of-type(3):hover span {
   display: inline-block;
   width: 16px;
   height: 14px;
@@ -284,17 +290,17 @@ ol {
   margin-right: 5px;
 }
 
-.render-list li:hover {
+.render-list a li:hover {
   border: 1px solid #fc532d;
 }
 
-.render-list li:hover > p:nth-of-type(3) {
+.render-list a li:hover > p:nth-of-type(3) {
   display: block;
   text-align: center;
   line-height: 30px;
 }
 
-.render-list li:nth-of-type(5n) {
+.render-list a li:nth-of-type(5n) {
   margin: 0 0 15px 0;
 }
 

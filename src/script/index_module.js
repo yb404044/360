@@ -20,7 +20,7 @@ define([], function() {
                         dataType: 'json'
                     })
                     .done(function(data) {
-                        console.log(data)
+                        // console.log(data)
                         let strhtml = ''
                         $.each(data, function(index, value) {
 
@@ -158,23 +158,162 @@ define([], function() {
                     })
 
                 })
+
                 $banner.hover(() => {
                     clearInterval(timer)
                 }, () => {
                     timer = setInterval(() => {
-                        index--
                         $right.trigger('click')
                     }, 3000)
                 })
 
                 timer = setInterval(() => {
-                    index--
                     $right.trigger('click')
                 }, 3000)
 
 
-            })()
+            })(),
             //楼梯栏
+            (function() {
+                const $loutilist = $('.leftside-box')
+                const $loutilia = $('.leftside-box a')
+                const $loutili = $('.leftside-box li')
+                const $loucengli = $('.mod-box').not('.clear')
+
+                let $bartop = $(window).scrollTop()
+                $bartop > 580 ? $loutilist.show() : $loutilist.hide()
+                $(window).on('scroll', function() {
+                    let $bartop = $(window).scrollTop()
+                    $bartop > 580 ? $loutilist.show() : $loutilist.hide()
+
+                    $loucengli.each(function(index, element) {
+                        let $loucengtop = $(element).offset().top + $(element).height() / 6
+                        if ($loucengtop > $bartop) {
+                            $loutili.removeClass('active')
+                            $loutili.eq(index).addClass('active')
+                            return false
+                        }
+                    })
+                })
+                $loucengli.each(function(index, element) {
+                    let $loucengtop = $(element).offset().top + $(element).height() / 6
+                    if ($loucengtop > $bartop) {
+                        $loutili.removeClass('active')
+                        $loutili.eq(index).addClass('active')
+                        return false
+                    }
+                })
+                $loutilia.on('click', function() {
+                    $loutili.eq($(this).index()).addClass('active');
+                    $(this).siblings().find('li').removeClass('active')
+                })
+
+
+
+
+                $loutilia.on('mouseover', function() {
+                    $loutili.eq($(this).index()).addClass('active');
+                })
+                $loutilia.on('mouseout', function() {
+                    $(this).find('li').removeClass('active')
+                })
+
+
+
+                $loutilia.on('click', function() {
+                    let $loucengtop = $loucengli.eq($(this).index()).offset().top - $loucengli.height() / 2.2
+
+                    $('html,body').animate({
+                        scrollTop: $loucengtop
+                    })
+
+
+                })
+            })(),
+            //右侧栏回到顶部
+            (function() {
+                const $top = $('.rightside-box .totop')
+
+                let $head = $(window).scrollTop()
+                $head > 580 ? $top.show() : $top.hide()
+                $(window).on('scroll', function() {
+                    let $head = $(window).scrollTop()
+                    $head > 580 ? $top.show() : $top.hide()
+                });
+
+                //遗留问题
+                // console.log($('.footer-top-wrap').height() + $('.footer-bottom-wrap').height())
+
+
+                $top.on('click', function() {
+
+                    $('html,body').animate({
+                        scrollTop: 0
+                    })
+                    $(this).hide()
+                })
+
+            })();
+            // 倒计时
+            (function() {
+
+                setInterval(() => {
+                    let futuretime = new Date('2020-9-30 18:00:00')
+                    let currenttime = new Date()
+                    let cha = parseInt((futuretime - currenttime) / 1000)
+                    let day = fn(parseInt(cha / 86400))
+                    let hour = fn(parseInt(cha % 86400 / 3600))
+                    let minute = fn(parseInt(cha % 3600 / 60))
+                    let second = fn(cha % 60)
+
+                    function fn(num) {
+
+                        if (num < 10) {
+                            return num = '0' + num
+                        } else {
+                            return num
+                        }
+                    }
+                    $('.day').html(day)
+                    $('.hour').html(hour)
+                    $('.minute').html(minute)
+                    $('.second').html(second)
+                }, 1000)
+
+
+
+            })();
+            // 点击登录
+            (function() {
+                $login = $('._login')
+                $zhe = $('#zhe')
+                $logindiv = $('.login')
+                $btn = $('.btns')
+                $login.on('click', function() {
+                    console.log(1)
+                    $zhe.show()
+                    $logindiv.show()
+                })
+                $btn.on('click', function() {
+                    $zhe.hide()
+                    $logindiv.hide()
+                })
+            })();
+            //点击注册
+            (function() {
+                $registry = $('._registry')
+                $zhao = $('#zhao')
+                $registrydiv = $('.registry')
+                $btnn = $('.btnn')
+                $registry.on('click', function() {
+                    $zhao.show()
+                    $registrydiv.show()
+                })
+                $btnn.on('click', function() {
+                    $zhao.hide()
+                    $registrydiv.hide()
+                })
+            })()
 
         }
     }

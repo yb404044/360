@@ -12,6 +12,13 @@ $initftcolor:#666;
     }
 }
 
+@mixin boxsize($w) {
+    width: $w;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 * {
     margin: 0;
     padding: 0;

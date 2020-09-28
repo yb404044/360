@@ -115,74 +115,85 @@
        .render-list {
            margin-top: 16px;
            width: 1250px;
-           li {
-               float: left;
-               width: 240px;
-               height: 335px;
-               margin: 0 10px 15px 0;
-               display: flex;
-               flex-direction: column;
-               align-items: center;
-               background-color: white;
-               border: 1px solid #E4E4E4;
-               >img {
-                   width: 165px;
-                   height: 165px;
-                   margin: 40px 0 10px 0;
-               }
-               >p:nth-of-type(1) {
-                   font-size: 14px;
-                   color: #31373c;
-               }
-               >p:nth-of-type(2) {
-                   font-size: 14px;
-                   color: #FA5473;
-                   margin-top: 10px;
-               }
-               >p:nth-of-type(3) {
-                   width: 122px;
-                   height: 30px;
+           a {
+               li {
+                   float: left;
+                   width: 240px;
+                   height: 335px;
+                   margin: 0 8px 15px 0;
                    display: flex;
-                   justify-content: center;
+                   flex-direction: column;
                    align-items: center;
-                   font-size: 12px;
-                   color: #FC522c;
-                   margin-top: 10px;
-                   border: 1px solid #fc532d;
-                   display: none;
-                   span {
+                   background-color: white;
+                   border: 1px solid #E4E4E4;
+                   >img {
+                       width: 165px;
+                       height: 165px;
+                       margin: 40px 0 10px 0;
+                   }
+                   >p:nth-of-type(1) {
+                       font-size: 14px;
+                       color: #31373c;
+                       //多行省略
+                       //    overflow: hidden;
+                       //    text-overflow: ellipsis;
+                       //    display: -webkit-box;
+                       //    -webkit-line-clamp: 2;
+                       //    -webkit-box-orient: vertical;
+                       //单行省略
+                       @include boxsize(240px);
+                       text-align: center;
+                   }
+                   >p:nth-of-type(2) {
+                       font-size: 14px;
+                       color: #FA5473;
+                       margin-top: 10px;
+                   }
+                   >p:nth-of-type(3) {
+                       width: 122px;
+                       height: 30px;
+                       display: flex;
+                       justify-content: center;
+                       align-items: center;
+                       font-size: 12px;
+                       color: #FC522c;
+                       margin-top: 10px;
+                       border: 1px solid #fc532d;
+                       display: none;
+                       span {
+                           display: inline-block;
+                           width: 16px;
+                           height: 14px;
+                           background: url(../img/orange-car.png);
+                           background-size: 16px 14px;
+                           margin-right: 5px;
+                       }
+                   }
+                   >p:nth-of-type(3):hover {
+                       color: #fff;
+                       background-color: #fc0d18;
+                       border: 0;
+                   }
+                   >p:nth-of-type(3):hover span {
                        display: inline-block;
                        width: 16px;
                        height: 14px;
-                       background: url(../img/orange-car.png);
+                       background: url(../img/white-car.png);
                        background-size: 16px 14px;
                        margin-right: 5px;
                    }
                }
-               >p:nth-of-type(3):hover {
-                   color: #fff;
-                   background-color: #fc0d18;
-                   border: 0;
+               li:hover {
+                   border: 1px solid #fc532d;
                }
-               >p:nth-of-type(3):hover span {
-                   display: inline-block;
-                   width: 16px;
-                   height: 14px;
-                   background: url(../img/white-car.png);
-                   background-size: 16px 14px;
-                   margin-right: 5px;
+               li:hover>p:nth-of-type(3) {
+                   display: block;
+                   text-align: center;
+                   line-height: 30px;
                }
-           }
-           li:hover {
-               border: 1px solid #fc532d;
-           }
-           li:hover>p:nth-of-type(3) {
-               display: block;
-               text-align: center;
-               line-height: 30px;
-           }
-           li:nth-of-type(5n) {
-               margin: 0 0 15px 0;
+               li:nth-of-type(5n) {
+                   margin: 0 0 15px 0;
+               }
            }
        }
        

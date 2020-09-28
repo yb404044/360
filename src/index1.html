@@ -12,12 +12,61 @@
 <script src="../src/script/require.js" data-main="../src/script/main" defer async="true" id="currentpage" data-page="index_module"></script>
 
 <body>
+
+
+    <!-- 注册框 -->
+    <div id="zhao">
+        <div class="registry">
+            <div class="btnn">
+                X
+            </div>
+            <div class="yi">
+                <i>手机号注册</i>
+            </div>
+            <form action="">
+                <input type="text" placeholder="手机号">
+                <input type="password" placeholder="密码">
+                <input type="email" placeholder="邮箱">
+                <div class="ma">
+                    <input type="text" placeholder="短信验证码">
+                    <div>获取验证码</div>
+                </div>
+                <input class="er" type="submit" value="注册">
+            </form>
+            <p>
+                <span>已有注册,立即登录</span>
+            </p>
+        </div>
+    </div>
+    <!-- 登录框 -->
+    <div id="zhe">
+        <div class="login">
+            <div class="btns">
+                X
+            </div>
+            <div class="yi">
+                <i>短信登录</i>
+                <i>360账号登陆</i>
+            </div>
+            <input type="text" placeholder="手机号">
+            <div class="ma">
+                <input type="text" placeholder="短信验证码">
+                <div>获取验证码</div>
+            </div>
+            <div class="er">登录</div>
+            <p>
+                <span>
+                    <a href="#">快速注册</a>
+                </span>
+                <span>找回密码</span>
+            </p>
+        </div>
+    </div>
     <!-- 遮罩 -->
     <div class="zhezhao">
         <div><b class="btn"></b></div>
-        banner
-    </div>
-    <div class="wrap">
+    </div> -->
+    <div class="wrap"> -->
         <!-- 小广告 -->
         <div class="banner-small">
             <img src="https://p0.ssl.qhimg.com/t010fca7ddfa91d4b74.webp" alt="">
@@ -31,8 +80,8 @@
                     <a href="">360官网</a>
                 </div>
                 <div class="head-smallbox-right">
-                    <a href="">登录</a>
-                    <a href="">注册</a>
+                    <a class="_login" href="javascript:;">登录</a>
+                    <a class="_registry" href="javascript:;">注册</a>
                     <a href="">360商城</a>
                     <i class=""></i>
                 </div>
@@ -171,6 +220,43 @@
             <img src="https://p0.ssl.qhimg.com/t010980ca5dbe282476.webp" alt="">
             <img src="https://p0.ssl.qhimg.com/t01742fe64aa28749ae.webp" alt="">
         </div>
+        <!-- 楼梯栏 -->
+        <ul class="leftside-box">
+            <a href="javascript:;">
+                <li>热门活动</li>
+            </a>
+            <a href="javascript:;">
+                <li>限时抢购</li>
+            </a>
+            <a href="javascript:;">
+                <li>爆款推荐</li>
+            </a>
+            <a href="javascript:;">
+                <li>家庭安防</li>
+            </a>
+            <a href="javascript:;">
+                <li>安全路由</li>
+            </a>
+            <a href="javascript:;">
+                <li>生态互联</li>
+            </a>
+            <a href="javascript:;">
+                <li>行车安全</li>
+            </a>
+            <a href="javascript:;">
+                <li>扫地机器人</li>
+            </a>
+            <a href="javascript:;">
+                <li>智能守护</li>
+            </a>
+            <a href="javascript:;">
+                <li>发现好货</li>
+            </a>
+            <a href="javascript:;">
+                <li>更多商品</li>
+            </a>
+        </ul>
+
         <!-- 1热门活动 -->
         <div class="mod-box">
             <div class="mod-title">热门活动</div>
@@ -181,7 +267,7 @@
                 <img src="https://p5.ssl.qhimg.com/t011482fee4bf2b4a60.webp" alt="">
             </div>
         </div>
-        <div class="mod-box">
+        <div class="mod-box clear">
             <img src="https://p0.ssl.qhimg.com/t0156b0f684167d1f58.webp" alt="">
         </div>
         <!-- 2限时抢购 -->
@@ -189,7 +275,11 @@
             <div class="mod-title">
                 <i style="vertical-align: middle;" class="limit"></i>
                 <span class="chang">12:00场</span>
-                <span class="over">距结束还有</span>
+                <span class="over">距结束国庆放假还有</span>
+                <strong class="shijian day">00</strong> 天
+                <strong class="shijian hour">00</strong> :
+                <strong class="shijian minute">00</strong> :
+                <strong class="shijian second">00</strong>
             </div>
             <div class="mod-limit">
                 <img src="https://p2.ssl.qhimg.com/t01b69ea3ed29108350.webp" alt="">
@@ -272,7 +362,7 @@
                 <img src="https://p1.ssl.qhimg.com/t01bbe71cbcf46e4520.webp" alt="">
             </div>
         </div>
-        <div class="mod-box">
+        <div class="mod-box clear">
             <img src="https://p5.ssl.qhimg.com/t010aff993924d733ca.webp" alt="">
         </div>
         <!-- 4家庭安防 -->
@@ -348,7 +438,7 @@
 
             </div>
         </div>
-        <div class="mod-box">
+        <div class="mod-box clear">
             <img style="margin-top: -20px;" src="https://p0.ssl.qhimg.com/t01938cf4d981d97c23.webp" alt="">
         </div>
         <!-- 5安全路由 -->
@@ -421,7 +511,7 @@
                 </div>
             </div>
         </div>
-        <div class="mod-box">
+        <div class="mod-box clear">
             <img style="margin-top: -20px;" src="https://p5.ssl.qhimg.com/t01b7a0c9723af2a195.webp" alt="">
         </div>
         <!-- 6生态互联 -->
@@ -495,7 +585,7 @@
             </div>
         </div>
 
-        <div class="mod-box">
+        <div class="mod-box clear">
             <img style="margin-top: -20px;" src="https://p4.ssl.qhimg.com/t01c6b9fb0f211ccfe4.webp" alt="">
         </div>
         <!-- 7行车安全 -->
@@ -570,7 +660,7 @@
                 </div>
             </div>
         </div>
-        <div class="mod-box">
+        <div class="mod-box clear">
             <img style="margin-top: -20px;" src="https://p5.ssl.qhimg.com/t011ec4446f7ce3e2b8.webp" alt="">
         </div>
         <!-- 8扫地机器人 -->
@@ -798,42 +888,7 @@
 
             </div>
         </div>
-        <!-- 楼梯栏 -->
-        <ul class="leftside-box">
-            <a href="#">
-                <li>热门活动</li>
-            </a>
-            <a href="#">
-                <li>限时抢购</li>
-            </a>
-            <a href="#">
-                <li>爆款推荐</li>
-            </a>
-            <a href="#">
-                <li>家庭安防</li>
-            </a>
-            <a href="#">
-                <li>安全路由</li>
-            </a>
-            <a href="#">
-                <li>生态互联</li>
-            </a>
-            <a href="#">
-                <li>行车安全</li>
-            </a>
-            <a href="#">
-                <li>扫地机器人</li>
-            </a>
-            <a href="#">
-                <li>智能守护</li>
-            </a>
-            <a href="#">
-                <li>发现好货</li>
-            </a>
-            <a href="#">
-                <li>更多商品</li>
-            </a>
-        </ul>
+
         <!-- 右侧栏 -->
         <div class="rightside-box">
             <span>
@@ -845,14 +900,16 @@
             <span>
                 <b></b>
             </span>
-            <span>
+            <span style="display: none;" class="totop">
                 <b></b>
             </span>
         </div>
         <!-- ------ -->
-        <p class="bottom-title">
-            <span>我已经陪你到底了</span>
-        </p>
+        <div class="wrapwrap">
+            <p class="bottom-title">
+                <span>我已经陪你到底了</span>
+            </p>
+        </div>
         <!-- 底部 -->
         <div class="footer-top-wrap">
             <div class="footer-top">
