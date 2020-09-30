@@ -1,4 +1,4 @@
-define([], function() {
+define(['pagination', 'jlazyload'], function() {
     return {
         init: function() {
 
@@ -16,7 +16,7 @@ define([], function() {
             (function() {
                 const $render = $('.mod-goods')
                 $.ajax({
-                        url: 'http://192.168.13.72/360/projectname/php/360json.php',
+                        url: 'http://192.168.13.13/360/projectname/php/360json.php',
                         dataType: 'json'
                     })
                     .done(function(data) {
@@ -25,7 +25,7 @@ define([], function() {
                         $.each(data, function(index, value) {
 
                             strhtml += `<div>
-                            <img src="${value.url}" alt="">
+                            <img class="lazy" data-original="${value.url}" width="185" height="165" alt="">
                             <p>${value.title}</p>
                             <p>￥${value.price}</p>
                             <p>直降</p>
@@ -35,6 +35,9 @@ define([], function() {
                         })
                         $render.html(strhtml)
 
+                        $(function() {
+                            $("img.lazy").lazyload({ effect: "fadeIn" });
+                        });
 
                     })
             })(),
@@ -42,7 +45,7 @@ define([], function() {
             (function() {
                 const $smart = $('.mod-smart')
                 $.ajax({
-                        url: 'http://192.168.13.72/360/projectname/php/360json.php',
+                        url: 'http://192.168.13.13/360/projectname/php/360json.php',
                         dataType: 'json'
                     })
                     .done(function(data) {
@@ -50,7 +53,7 @@ define([], function() {
                         $.each(data, function(index, value) {
                             str += `
                     <div class="family-box">
-                        <img src="${value.url}" alt="">
+                        <img class="lazy"  data-original="${value.url}" width="240" height="240" alt="">
                         <p>360家庭防火墙路由器V5x</p>
                         <p>游戏加速拒绝卡顿</p>
                         <div>
@@ -64,6 +67,11 @@ define([], function() {
                             }
                         })
                         $smart.html(str)
+
+                        $(function() {
+                            $("img.lazy").lazyload({ effect: "fadeIn" });
+                        });
+
                     })
             })(),
             //tab切换

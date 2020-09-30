@@ -7,9 +7,11 @@
     <title>Document</title>
 </head>
 <link rel="stylesheet" href="../src/css/list.css">
+<link rel="stylesheet" href="../src/css/pagination.css">
+
 <script src="../src/script/require.js" data-main="../src/script/main" defer async="true" id="currentpage" data-page="list_module"></script>
 
-<body style="height: 2000px;">
+<body>
     <!-- 顶部小盒子 -->
 
     <div id="wrap">
@@ -54,6 +56,11 @@
             </div>
         </div>
         <!-- 渲染li -->
+        <div id="anniu" style="display: flex; margin: 5px;">
+            <button style="margin-left: 5px;">默认排序</button>
+            <button style="margin-left: 5px;">价格升序</button>
+            <button style="margin-left: 5px;">价格降序</button>
+        </div>
         <ul class="render-list">
             <!-- 1 -->
 
@@ -61,7 +68,7 @@
                 <li>
                     <img style="margin-top: 40px;" src="https://p3.ssl.qhmsg.com/dr/180_180_/t01a1b05a4db639487e.webp" alt="">
                     <p>360运动蓝牙耳机SNE1黑色</p>
-                    <p>￥129</p>
+                    <p >￥129</p>
                     <p>
                         <span></span>加入购物车
                     </p>
@@ -87,7 +94,11 @@
             </span>
         </div>
         <!-- 分页 -->
-        <ol class="fenye">
+        <div class="pagelist" style="margin-bottom: 15px;">
+            <div class="m-style page">
+            </div>
+        </div>
+        <!-- <ol class="fenye">
             <li>
                 <a href="#">首页</a>
             </li>
@@ -122,7 +133,7 @@
             <li>
                 <a href="#">尾页</a>
             </li>
-        </ol>
+        </ol> -->
         <!-- 底部 -->
         <div class="footer-top-wrap">
             <div class="footer-top">

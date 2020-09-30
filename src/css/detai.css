@@ -249,12 +249,14 @@ body {
   left: 488px;
   top: 0;
   overflow: hidden;
-  display: none;
+  background-color: #fff;
+  visibility: hidden;
 }
 
 .content .wrap > .df > img {
   width: 816px;
   height: 816px;
+  position: absolute;
 }
 
 .content .left {
@@ -283,6 +285,7 @@ body {
   font-size: 16px;
   text-align: center;
   margin-left: 5px;
+  z-index: 20;
 }
 
 .content .left > .five-spic > .left {
@@ -297,12 +300,27 @@ body {
   text-align: center;
   margin-right: 5px;
   visibility: hidden;
+  z-index: 20;
 }
 
-.content .left > .five-spic > img {
+.content .left > .five-spic > #move {
+  overflow: hidden;
+}
+
+.content .left > .five-spic > #move > #tutu {
+  width: 440px;
+  height: 92px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.content .left > .five-spic > #move > #tutu > img {
   display: block;
   width: 88px;
   height: 88px;
+  z-index: 1;
 }
 
 .content .left > .five-spic > .left {
@@ -333,7 +351,7 @@ body {
 
 .content > .right .price {
   margin-top: 54px;
-  height: 111px;
+  height: 141px;
   padding-top: 15px;
   border-top: 5px solid #eee;
   background-color: #FAFAFA;
@@ -358,6 +376,13 @@ body {
 .content > .right .price > p > span:nth-of-type(3) {
   font-size: 12px;
   color: #333;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.content > .right .price #sailnumber {
+  font-size: 14px;
+  color: #666;
 }
 
 .content > .right .word > p:nth-of-type(1) {
