@@ -175,14 +175,40 @@
                            color: #36b447;
                        }
                    }
-                   >input:nth-of-type(1) {
-                       margin-top: 30px;
-                       width: 300px;
-                       height: 42px;
-                       border-radius: 2px;
-                       border: 1px solid #ddd;
-                       font-size: 14px;
-                       text-indent: 10px;
+                   form {
+                       display: flex;
+                       flex-direction: column;
+                       justify-content: center;
+                       >input:nth-of-type(1) {
+                           margin-top: 30px;
+                           width: 300px;
+                           height: 42px;
+                           border-radius: 2px;
+                           border: 1px solid #ddd;
+                           font-size: 14px;
+                           text-indent: 10px;
+                       }
+                       >input:nth-of-type(2) {
+                           margin-top: 15px;
+                           margin-bottom: 15px;
+                           width: 300px;
+                           height: 42px;
+                           border-radius: 2px;
+                           border: 1px solid #ddd;
+                           font-size: 14px;
+                           text-indent: 10px;
+                       }
+                       .deng {
+                           width: 300px;
+                           height: 42px;
+                           border-color: #36b447;
+                           background-color: #36b447;
+                           color: #fff;
+                           font-size: 18px;
+                           text-align: center;
+                           line-height: 42px;
+                           border-radius: 2px;
+                       }
                    }
                    >.ma {
                        margin-top: 20px;
@@ -210,17 +236,6 @@
                            color: #36b447;
                            border: 1px solid #ddd;
                        }
-                   }
-                   .er {
-                       width: 300px;
-                       height: 42px;
-                       border-color: #36b447;
-                       background-color: #36b447;
-                       color: #fff;
-                       font-size: 18px;
-                       text-align: center;
-                       line-height: 42px;
-                       border-radius: 2px;
                    }
                    >p {
                        a {
@@ -256,7 +271,7 @@
                    margin: auto;
                    width: 400px;
                    height: 533px;
-                   background: url(../img/zhezhao.png) no-repeat;
+                   background: url(https://p1.ssl.qhimg.com/t01c97472d866987cc2.png) no-repeat;
                    background-size: 400px 533px;
                    b {
                        position: absolute;
@@ -303,6 +318,29 @@
                        margin-right: 25px;
                        line-height: 40px;
                        color: white;
+                   }
+                   .admin {
+                       font-size: 12px;
+                       margin-left: 25px;
+                       line-height: 40px;
+                       color: white;
+                       i {
+                           background-image: url(../img/t019bd9e375d813e9d1.png);
+                           background-repeat: no-repeat;
+                           background-size: 200px 240px;
+                           display: inline-block;
+                           vertical-align: middle;
+                           height: 22px;
+                           width: 24px;
+                           background-position: -110px -48px;
+                           margin: -4px 0 0 25px;
+                       }
+                       a {
+                           font-size: 12px;
+                           margin-left: 10px;
+                           line-height: 40px;
+                           color: white;
+                       }
                    }
                    .head-smallbox-right a {
                        font-size: 12px;

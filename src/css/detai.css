@@ -453,16 +453,12 @@ body {
   line-height: 30px;
 }
 
-.content > .right .number > span:nth-of-type(2) {
+.content > .right .number > input {
+  outline: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: center;
   background-color: #fff;
   color: #999999;
   font-size: 14px;
@@ -473,6 +469,7 @@ body {
 }
 
 .content > .right .number > button:nth-of-type(1) {
+  outline: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -484,15 +481,26 @@ body {
           align-items: center;
   width: 28px;
   height: 28px;
-  color: #DDD;
-  background-color: #fff;
+  color: #333;
+  background-color: #f6f6f6;
   font-size: 16px;
   border: 1px solid #ddd;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
 
+.content > .right .number > button:nth-of-type(1):hover {
+  cursor: pointer;
+  color: #F63;
+}
+
+.content > .right .number > button:nth-of-type(2):hover {
+  cursor: pointer;
+  color: #F63;
+}
+
 .content > .right .number > button:nth-of-type(2) {
+  outline: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -514,6 +522,21 @@ body {
 }
 
 .content > .right .addcart {
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 38px;
+  width: 200px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  background-color: #F63;
+  color: #fff;
+  margin-top: 16px;
+}
+
+.content > .right .addcart-1 {
   border-radius: 6px;
   font-size: 20px;
   font-weight: 400;

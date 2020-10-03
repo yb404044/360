@@ -1,4 +1,4 @@
-define(['pagination', 'jlazyload'], function() {
+define(['pagination', 'jlazyload', 'jcookie', 'sha1'], function() {
     return {
         init: function() {
 
@@ -16,7 +16,7 @@ define(['pagination', 'jlazyload'], function() {
             (function() {
                 const $render = $('.mod-goods')
                 $.ajax({
-                        url: 'http://192.168.13.13/360/projectname/php/360json.php',
+                        url: 'http://localhost/360/projectname/php/360json.php',
                         dataType: 'json'
                     })
                     .done(function(data) {
@@ -45,7 +45,7 @@ define(['pagination', 'jlazyload'], function() {
             (function() {
                 const $smart = $('.mod-smart')
                 $.ajax({
-                        url: 'http://192.168.13.13/360/projectname/php/360json.php',
+                        url: 'http://localhost/360/projectname/php/360json.php',
                         dataType: 'json'
                     })
                     .done(function(data) {
@@ -263,64 +263,257 @@ define(['pagination', 'jlazyload'], function() {
 
             })();
             // 倒计时
+            // (function() {
+
+            //     setInterval(() => {
+            //         let futuretime = new Date('2020-9-30 18:00:00')
+            //         let currenttime = new Date()
+            //         let cha = parseInt((futuretime - currenttime) / 1000)
+            //         let day = fn(parseInt(cha / 86400))
+            //         let hour = fn(parseInt(cha % 86400 / 3600))
+            //         let minute = fn(parseInt(cha % 3600 / 60))
+            //         let second = fn(cha % 60)
+
+            //         function fn(num) {
+
+            //             if (num < 10) {
+            //                 return num = '0' + num
+            //             } else {
+            //                 return num
+            //             }
+            //         }
+            //         $('.day').html(day)
+            //         $('.hour').html(hour)
+            //         $('.minute').html(minute)
+            //         $('.second').html(second)
+            //     }, 1000)
+
+
+
+            // })();
+
+            //判断用户名是否存在
             (function() {
+                const admin = $('.admin')
+                const head = $('.head-smallbox-right')
 
-                setInterval(() => {
-                    let futuretime = new Date('2020-9-30 18:00:00')
-                    let currenttime = new Date()
-                    let cha = parseInt((futuretime - currenttime) / 1000)
-                    let day = fn(parseInt(cha / 86400))
-                    let hour = fn(parseInt(cha % 86400 / 3600))
-                    let minute = fn(parseInt(cha % 3600 / 60))
-                    let second = fn(cha % 60)
+                const span = $('.admin span')
+                const close = $('.admin a')
 
-                    function fn(num) {
-
-                        if (num < 10) {
-                            return num = '0' + num
-                        } else {
-                            return num
-                        }
-                    }
-                    $('.day').html(day)
-                    $('.hour').html(hour)
-                    $('.minute').html(minute)
-                    $('.second').html(second)
-                }, 1000)
-
-
-
+                if ($.cookie('username')) { //如果cookie存在用户名，显示admin，并且赋值
+                    admin.show()
+                    head.hide()
+                    span.html($.cookie('username'))
+                }
+                close.on('click', function() {
+                    console.log(1)
+                    _username = $('._username')
+                    $.cookie('username', _username.val(), { expires: -1, path: '/' });
+                    admin.hide()
+                    head.show()
+                })
             })();
             // 点击登录
             (function() {
-                $login = $('._login')
-                $zhe = $('#zhe')
-                $logindiv = $('.login')
-                $btn = $('.btns')
+
+                let $registrydiv = $('.registry')
+                let $zhao = $('#zhao')
+                const admin = $('.admin')
+                const head = $('.head-smallbox-right')
+                let $zhuce = $('.zhuce')
+                let $login = $('._login')
+                let $zhe = $('#zhe')
+                let $logindiv = $('.login')
+                let $btn = $('.btns')
                 $login.on('click', function() {
-                    console.log(1)
                     $zhe.show()
                     $logindiv.show()
+
+                    const _username = $('._username')
+                    const _password = $('._password')
+                    _username.val('');
+                    _password.val('');
                 })
                 $btn.on('click', function() {
                     $zhe.hide()
                     $logindiv.hide()
                 })
+
+                $zhuce.on('click', function() {
+                    const username = $('.username')
+                    const password = $('.password')
+                    const email = $('.email')
+                    let $span = $('#registry span');
+                    $zhao.show()
+                    $registrydiv.show()
+                    $zhe.hide()
+                    $logindiv.hide()
+                    username.val('');
+                    password.val('');
+                    email.val('');
+                    $span.html('')
+
+                })
+                const _username = $('._username')
+                const _password = $('._password')
+                const login = $('#_login>div')
+                const span = $('.admin span')
+                _username.val('');
+                _password.val('');
+                login.on('click', function() {
+                    console.log(1)
+                    console.log(_username.val())
+                    $.ajax({
+                            type: 'post',
+                            url: 'http://localhost/360/projectname/php/login.php',
+                            data: {
+                                user: _username.val(),
+                                pass: hex_sha1(_password.val())
+                            }
+
+                        })
+                        .done((data) => {
+                            if (!data) {
+                                alert('用户名或者密码错误');
+                                _username.val('');
+                                _password.val('');
+                            } else {
+
+                                alert('登录成功');
+                                $.cookie('username', _username.val(), { expires: 7, path: '/' });
+                                $zhe.hide()
+                                $logindiv.hide()
+                                admin.show()
+                                head.hide()
+                                span.html($.cookie('username'))
+                                $zhe.hide()
+                                $logindiv.hide()
+
+                            }
+                        })
+                })
+
+                //点击跳转到购物车
+                const _i = $('.admin i')
+                const i = $('.head-smallbox-right i')
+                _i.on('click', function() {
+                    location.href = 'http://localhost/360/projectname/src/cart.html'
+                })
+                i.on('click', function() {
+                    alert('请先登录')
+                })
+
             })();
             //点击注册
             (function() {
-                $registry = $('._registry')
-                $zhao = $('#zhao')
-                $registrydiv = $('.registry')
-                $btnn = $('.btnn')
+                let $zhe = $('#zhe')
+                let $logindiv = $('.login')
+                let $registry = $('._registry')
+                let $zhao = $('#zhao')
+                let $registrydiv = $('.registry')
+                let $btnn = $('.btnn')
                 $registry.on('click', function() {
                     $zhao.show()
                     $registrydiv.show()
+                    const username = $('.username')
+                    const password = $('.password')
+                    const email = $('.email')
+                    let $span = $('#registry span');
+                    username.val('');
+                    password.val('');
+                    email.val('');
+                    $span.html('')
                 })
                 $btnn.on('click', function() {
                     $zhao.hide()
                     $registrydiv.hide()
+                });
+
+                const $username = $('.username');
+                let $span = $('#registry span');
+                const $denglu = $('.denglu');
+                let userflag = false;
+                const username = $('.username')
+                const password = $('.password')
+                const email = $('.email')
+                username.val('');
+                password.val('');
+                email.val('');
+                $span.html('')
+                $username.on('blur', function() {
+                        console.log($username.val())
+                        $.ajax({
+                                type: 'post',
+                                url: 'http://localhost/360/projectname/php/registry.php',
+                                data: {
+                                    name: $username.val() //将用户名传给后端
+                                }
+                            })
+                            .done((data) => {
+                                if (!data) {
+                                    $span.html('√')
+                                    $span.css({
+                                        color: 'green'
+                                    })
+                                    userflag = true;
+                                } else {
+                                    $span.html('该用户名已经存在')
+                                    $span.css({
+                                        color: 'red'
+                                    })
+                                    userflag = false;
+                                }
+                            })
+                    })
+                    // 阻止提交
+                    // $form.on('submit', function() {
+                    //     if (!userflag) {
+                    //         return false;
+                    //     }
+
+                // })
+
+                // $submit.on('click', function() {
+                //     if (!userflag) {
+                //         return false;
+                //     }
+                //     $zhao.hide()
+                //     $registrydiv.hide()
+                //     $zhe.show()
+                //     $logindiv.show()
+                // })
+                $denglu.on('click', function() {
+                    $zhao.hide()
+                    $registrydiv.hide()
+                    $zhe.show()
+                    $logindiv.show()
                 })
+                $('.er').on('click', function() {
+                    if (userflag) {
+                        $.ajax({
+                            type: "post",
+                            url: "http://localhost/360/projectname/php/registry.php",
+                            data: {
+                                username: $('.username').val(),
+                                password: $('.password').val(),
+                                email: $('.email').val(),
+                                dataType: "json",
+                            }
+
+                        }).done((data) => {
+                            if (data) {
+                                $('.registry').hide()
+                                $('#zhao').hide()
+                                $('.login').show()
+                                $('#zhe').show()
+
+                            }
+                        })
+                    }
+                })
+
+
+
             })()
 
         }

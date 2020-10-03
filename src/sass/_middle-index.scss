@@ -592,6 +592,10 @@
     justify-content: center;
     align-items: center;
     border-left: 1px solid #e7e7e7;
+    >span:nth-of-type(1):hover i {
+        display: block;
+        z-index: 2;
+    }
     >span:nth-of-type(1) {
         width: 39px;
         height: 36px;
@@ -600,6 +604,22 @@
         align-items: center;
         position: absolute;
         bottom: 53%;
+        >i {
+            border-radius: 2px;
+            box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+            position: absolute;
+            right: 40px;
+            top: 0;
+            font-size: 12px;
+            line-height: 30px;
+            opacity: 0.8;
+            text-align: center;
+            width: 80px;
+            height: 30px;
+            color: #333;
+            background-color: #fff;
+            display: none;
+        }
         b {
             width: 20px;
             height: 20px;
@@ -608,7 +628,10 @@
             background-position: -172px -80px;
         }
     }
-    >span:nth-of-type(2) {
+    >div:hover div {
+        visibility: visible;
+    }
+    >div {
         width: 39px;
         height: 36px;
         display: flex;
@@ -616,6 +639,26 @@
         align-items: center;
         position: absolute;
         bottom: 50%;
+        >div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: -105px;
+            box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+            color: #333;
+            border-radius: 2px;
+            right: 39px;
+            width: 106px;
+            height: 128px;
+            padding: 2px;
+            background-color: #fff;
+            visibility: hidden;
+            >span {
+                font-size: 14px;
+                color: #333;
+            }
+        }
         b {
             width: 20px;
             height: 20px;
@@ -624,7 +667,7 @@
             background-position: -172px -104px;
         }
     }
-    >span:nth-of-type(3) {
+    >span:nth-of-type(2) {
         width: 39px;
         height: 36px;
         display: flex;
@@ -640,7 +683,7 @@
             background-position: -172px -154px;
         }
     }
-    >span:nth-of-type(4) {
+    >span:nth-of-type(3) {
         width: 39px;
         height: 36px;
         display: flex;

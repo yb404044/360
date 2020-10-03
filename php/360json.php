@@ -21,6 +21,6 @@ for($i=0;$i<$res->num_rows;$i++){
   $arr[$i]=$res->fetch_assoc();
 }
 echo json_encode($arr);
-//http://192.168.13.72/360/projectname/php/360json.php
+//http://192.168.13.13/360/projectname/php/360json.php
 
 

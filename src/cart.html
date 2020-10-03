@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>360商城购物车页</title>
 </head>
 <link rel="stylesheet" href="../src/css/cart.css">
+<script src="../src/script/require.js" data-main="../src/script/main" defer async="true" id="currentpage" data-page="cart_module"></script>
 
 <body>
     <!-- 顶部小盒子 -->
@@ -65,7 +66,7 @@
             <div class="cart-top">
 
                 <span>
-                    <input type="checkbox">
+                    <input type="checkbox" class="allsel">
                     全选
                 </span>
                 <span>商品</span>
@@ -81,115 +82,41 @@
                 <div class="youhui-right">优惠券</div>
             </div>
             <!-- 商品类表 -->
-            <div class="cart-content">
-                <div>
-                    <input type="checkbox">
+            <div class="wrap-box">
+                <div class="cart-content" style="display: none;">
+                    <div>
+                        <input class="check" type="checkbox">
+                    </div>
+                    <div>
+                        <img id="pic" src="https://p1.ssl.qhimg.com/t0137d6ae577a7c0193.png" alt="">
+                        <p>
+                            <span id="title">闪迪(SanDisk)U盘32G酷皓(CZ61)黑红</span>
+                        </p>
+                    </div>
+                    <div>分类:CZ61/32G</div>
+                    <div id="price">￥32.00</div>
+                    <div>
+                        <p class="number">
+                            <button class="quantity-down">-</button>
+                            <input type="text" id="sailnumber" value="1">
+                            <button class="quantity-add">+</button>
+                        </p>
+                    </div>
+                    <div id="calc">￥192.00</div>
+                    <div class="del-one">删除</div>
                 </div>
-                <div>
-                    <img src="https://p1.ssl.qhimg.com/t0137d6ae577a7c0193.png" alt="">
-                    <p>
-                        <span>闪迪(SanDisk)U盘32G酷皓(CZ61)黑红</span>
-                        <span>(新款)商务办公车载迷你</span>
-                    </p>
-                </div>
-                <div>分类:CZ61/32G</div>
-                <div>￥32.00</div>
-                <div>
-                    <p class="number">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </p>
-                </div>
-                <div>￥192.00</div>
-                <div>删除</div>
             </div>
             <!-- 结束 -->
-            <!-- 商品类表 -->
-            <div class="cart-content">
-                <div>
-                    <input type="checkbox">
-                </div>
-                <div>
-                    <img src="https://p1.ssl.qhimg.com/t0137d6ae577a7c0193.png" alt="">
-                    <p>
-                        <span>闪迪(SanDisk)U盘32G酷皓(CZ61)黑红</span>
-                        <span>(新款)商务办公车载迷你</span>
-                    </p>
-                </div>
-                <div>分类:CZ61/32G</div>
-                <div>￥32.00</div>
-                <div>
-                    <p class="number">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </p>
-                </div>
-                <div>￥192.00</div>
-                <div>删除</div>
-            </div>
-            <!-- 结束 -->
-            <!-- 商品类表 -->
-            <div class="cart-content">
-                <div>
-                    <input type="checkbox">
-                </div>
-                <div>
-                    <img src="https://p1.ssl.qhimg.com/t0137d6ae577a7c0193.png" alt="">
-                    <p>
-                        <span>闪迪(SanDisk)U盘32G酷皓(CZ61)黑红</span>
-                        <span>(新款)商务办公车载迷你</span>
-                    </p>
-                </div>
-                <div>分类:CZ61/32G</div>
-                <div>￥32.00</div>
-                <div>
-                    <p class="number">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </p>
-                </div>
-                <div>￥192.00</div>
-                <div>删除</div>
-            </div>
-            <!-- 结束 -->
-            <!-- 商品类表 -->
-            <div class="cart-content">
-                <div>
-                    <input type="checkbox">
-                </div>
-                <div>
-                    <img src="https://p1.ssl.qhimg.com/t0137d6ae577a7c0193.png" alt="">
-                    <p>
-                        <span>闪迪(SanDisk)U盘32G酷皓(CZ61)黑红</span>
-                        <span>(新款)商务办公车载迷你</span>
-                    </p>
-                </div>
-                <div>分类:CZ61/32G</div>
-                <div>￥32.00</div>
-                <div>
-                    <p class="number">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </p>
-                </div>
-                <div>￥192.00</div>
-                <div>删除</div>
-            </div>
-            <!-- 结束 -->
-            <div class="cart-resolve">
 
+            <div class="cart-resolve">
                 <span>
-                    <input type="checkbox">
+                    <input type="checkbox" class="allsel">
                     全选
                 </span>
-                <span>删除选中的商品</span>
+                <span class="del-all">删除选中的商品</span>
                 <p>
-                    <b>已选12件商品</b>
-                    <b>合计:￥5358.00</b>
+                    <b>已选<i></i>件商品</b>
+                    <b>合计:￥<em></em></b>
                 </p>
                 <span>结算</span>
 

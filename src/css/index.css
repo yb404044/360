@@ -280,7 +280,20 @@ ol {
   color: #36b447;
 }
 
-#zhe .login > input:nth-of-type(1) {
+#zhe .login form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#zhe .login form > input:nth-of-type(1) {
   margin-top: 30px;
   width: 300px;
   height: 42px;
@@ -288,6 +301,29 @@ ol {
   border: 1px solid #ddd;
   font-size: 14px;
   text-indent: 10px;
+}
+
+#zhe .login form > input:nth-of-type(2) {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 300px;
+  height: 42px;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  text-indent: 10px;
+}
+
+#zhe .login form .deng {
+  width: 300px;
+  height: 42px;
+  border-color: #36b447;
+  background-color: #36b447;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  line-height: 42px;
+  border-radius: 2px;
 }
 
 #zhe .login > .ma {
@@ -324,18 +360,6 @@ ol {
   border: 1px solid #ddd;
 }
 
-#zhe .login .er {
-  width: 300px;
-  height: 42px;
-  border-color: #36b447;
-  background-color: #36b447;
-  color: #fff;
-  font-size: 18px;
-  text-align: center;
-  line-height: 42px;
-  border-radius: 2px;
-}
-
 #zhe .login > p {
   margin-top: 8px;
   width: 300px;
@@ -368,7 +392,7 @@ ol {
   margin: auto;
   width: 400px;
   height: 533px;
-  background: url(../img/zhezhao.png) no-repeat;
+  background: url(https://p1.ssl.qhimg.com/t01c97472d866987cc2.png) no-repeat;
   background-size: 400px 533px;
 }
 
@@ -424,6 +448,32 @@ ol {
 .wrap-head-smallbox .head-smallbox .head-smallbox-left a {
   font-size: 12px;
   margin-right: 25px;
+  line-height: 40px;
+  color: white;
+}
+
+.wrap-head-smallbox .head-smallbox .admin {
+  font-size: 12px;
+  margin-left: 25px;
+  line-height: 40px;
+  color: white;
+}
+
+.wrap-head-smallbox .head-smallbox .admin i {
+  background-image: url(../img/t019bd9e375d813e9d1.png);
+  background-repeat: no-repeat;
+  background-size: 200px 240px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 22px;
+  width: 24px;
+  background-position: -110px -48px;
+  margin: -4px 0 0 25px;
+}
+
+.wrap-head-smallbox .head-smallbox .admin a {
+  font-size: 12px;
+  margin-left: 10px;
   line-height: 40px;
   color: white;
 }
@@ -1513,6 +1563,11 @@ ol {
   border-left: 1px solid #e7e7e7;
 }
 
+.rightside-box > span:nth-of-type(1):hover i {
+  display: block;
+  z-index: 2;
+}
+
 .rightside-box > span:nth-of-type(1) {
   width: 39px;
   height: 36px;
@@ -1529,6 +1584,24 @@ ol {
   bottom: 53%;
 }
 
+.rightside-box > span:nth-of-type(1) > i {
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+  position: absolute;
+  right: 40px;
+  top: 0;
+  font-size: 12px;
+  line-height: 30px;
+  opacity: 0.8;
+  text-align: center;
+  width: 80px;
+  height: 30px;
+  color: #333;
+  background-color: #fff;
+  display: none;
+}
+
 .rightside-box > span:nth-of-type(1) b {
   width: 20px;
   height: 20px;
@@ -1537,7 +1610,11 @@ ol {
   background-position: -172px -80px;
 }
 
-.rightside-box > span:nth-of-type(2) {
+.rightside-box > div:hover div {
+  visibility: visible;
+}
+
+.rightside-box > div {
   width: 39px;
   height: 36px;
   display: -webkit-box;
@@ -1553,7 +1630,37 @@ ol {
   bottom: 50%;
 }
 
-.rightside-box > span:nth-of-type(2) b {
+.rightside-box > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: -105px;
+  -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+  color: #333;
+  border-radius: 2px;
+  right: 39px;
+  width: 106px;
+  height: 128px;
+  padding: 2px;
+  background-color: #fff;
+  visibility: hidden;
+}
+
+.rightside-box > div > div > span {
+  font-size: 14px;
+  color: #333;
+}
+
+.rightside-box > div b {
   width: 20px;
   height: 20px;
   display: block;
@@ -1561,7 +1668,7 @@ ol {
   background-position: -172px -104px;
 }
 
-.rightside-box > span:nth-of-type(3) {
+.rightside-box > span:nth-of-type(2) {
   width: 39px;
   height: 36px;
   display: -webkit-box;
@@ -1577,7 +1684,7 @@ ol {
   bottom: 214px;
 }
 
-.rightside-box > span:nth-of-type(3) b {
+.rightside-box > span:nth-of-type(2) b {
   width: 20px;
   height: 20px;
   display: block;
@@ -1585,7 +1692,7 @@ ol {
   background-position: -172px -154px;
 }
 
-.rightside-box > span:nth-of-type(4) {
+.rightside-box > span:nth-of-type(3) {
   width: 39px;
   height: 36px;
   display: -webkit-box;
@@ -1601,7 +1708,7 @@ ol {
   bottom: 184px;
 }
 
-.rightside-box > span:nth-of-type(4) b {
+.rightside-box > span:nth-of-type(3) b {
   width: 20px;
   height: 20px;
   display: block;

@@ -7,7 +7,7 @@ define(['pagination', 'jlazyload'], function() {
             let next = null;
             (function() {
                 $.ajax({
-                        url: 'http://192.168.13.13/360/projectname/php/listdata.php',
+                        url: 'http://localhost/360/projectname/php/listdata.php',
                         dataType: 'json'
                     })
                     .done((data) => {
@@ -60,7 +60,7 @@ define(['pagination', 'jlazyload'], function() {
                             callback: function(api) {
                                 console.log(api.getCurrent()); //获取的页码给后端
                                 $.ajax({
-                                    url: 'http://192.168.13.13/360/projectname/php/listdata.php',
+                                    url: 'http://localhost/360/projectname/php/listdata.php',
                                     data: {
                                         page: api.getCurrent()
                                     },

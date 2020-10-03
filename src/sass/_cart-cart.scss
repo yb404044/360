@@ -389,13 +389,14 @@
                width: 1020px;
                background-color: #fff;
                height: 107px;
-               display: flex;
-               align-items: center;
+               //    display: flex;
+               //    align-items: center;
                border-bottom: 1px solid #ddd;
                >div {
                    text-align: center;
                }
                >div:nth-of-type(1) {
+                   float: left;
                    width: 62px;
                    height: 100%;
                    display: flex;
@@ -404,6 +405,8 @@
                    border-bottom: 1px solid #fff;
                }
                >div:nth-of-type(2) {
+                   margin-top: 23px;
+                   float: left;
                    display: flex;
                    width: 352px;
                    >img {
@@ -413,6 +416,8 @@
                        width: 68px;
                    }
                    >p {
+                       margin-top: 13px;
+                       float: left;
                        margin-left: 10px;
                        display: flex;
                        flex-direction: column;
@@ -424,17 +429,22 @@
                    }
                }
                >div:nth-of-type(3) {
+                   margin-top: 45px;
+                   float: left;
                    width: 200px;
                    font-size: 14px;
                    color: #333;
                }
                >div:nth-of-type(4) {
+                   margin-top: 45px;
+                   float: left;
                    width: 105px;
                    font-size: 14px;
                    color: #333;
-                   margin-top: 10px;
                }
                >div:nth-of-type(5) {
+                   margin-top: 19px;
+                   float: left;
                    width: 106px;
                    .number {
                        display: flex;
@@ -458,17 +468,38 @@
                            width: 42px;
                            height: 28px;
                        }
+                       >input {
+                           outline: none;
+                           display: flex;
+                           text-align: center;
+                           background-color: #fff;
+                           color: #999999;
+                           font-size: 14px;
+                           border: 1px solid #ddd;
+                           margin-left: -1px;
+                           width: 42px;
+                           height: 28px;
+                       }
+                       >button:nth-of-type(1):hover {
+                           color: #ff6633;
+                           cursor: pointer;
+                       }
+                       >button:nth-of-type(2):hover {
+                           color: #ff6633;
+                           cursor: pointer;
+                       }
                        >button:nth-of-type(1) {
                            display: flex;
                            justify-content: center;
                            align-items: center;
                            width: 28px;
                            height: 28px;
-                           color: #DDD;
-                           background-color: #fff;
+                           color: #333;
+                           background-color: #f6f6f6;
                            font-size: 16px;
                            border: 1px solid #ddd;
                            box-sizing: content-box;
+                           outline: none;
                        }
                        >button:nth-of-type(2) {
                            display: flex;
@@ -482,15 +513,20 @@
                            border: 1px solid #ddd;
                            box-sizing: content-box;
                            margin-left: -1px;
+                           outline: none;
                        }
                    }
                }
                >div:nth-of-type(6) {
+                   margin-top: 38px;
+                   float: left;
                    width: 106px;
                    font-size: 14px;
                    color: #FF3333;
                }
                >div:nth-of-type(7) {
+                   float: right;
+                   margin-top: -18px;
                    width: 105px;
                    font-size: 14px;
                    color: #333;

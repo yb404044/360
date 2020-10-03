@@ -576,12 +576,6 @@ ol {
   width: 1020px;
   background-color: #fff;
   height: 107px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border-bottom: 1px solid #ddd;
 }
 
@@ -590,6 +584,7 @@ ol {
 }
 
 .cart .cart-content > div:nth-of-type(1) {
+  float: left;
   width: 62px;
   height: 100%;
   display: -webkit-box;
@@ -605,6 +600,8 @@ ol {
 }
 
 .cart .cart-content > div:nth-of-type(2) {
+  margin-top: 23px;
+  float: left;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -619,6 +616,8 @@ ol {
 }
 
 .cart .cart-content > div:nth-of-type(2) > p {
+  margin-top: 13px;
+  float: left;
   margin-left: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -636,19 +635,24 @@ ol {
 }
 
 .cart .cart-content > div:nth-of-type(3) {
+  margin-top: 45px;
+  float: left;
   width: 200px;
   font-size: 14px;
   color: #333;
 }
 
 .cart .cart-content > div:nth-of-type(4) {
+  margin-top: 45px;
+  float: left;
   width: 105px;
   font-size: 14px;
   color: #333;
-  margin-top: 10px;
 }
 
 .cart .cart-content > div:nth-of-type(5) {
+  margin-top: 19px;
+  float: left;
   width: 106px;
 }
 
@@ -678,6 +682,31 @@ ol {
   height: 28px;
 }
 
+.cart .cart-content > div:nth-of-type(5) .number > input {
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  background-color: #fff;
+  color: #999999;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+  width: 42px;
+  height: 28px;
+}
+
+.cart .cart-content > div:nth-of-type(5) .number > button:nth-of-type(1):hover {
+  color: #ff6633;
+  cursor: pointer;
+}
+
+.cart .cart-content > div:nth-of-type(5) .number > button:nth-of-type(2):hover {
+  color: #ff6633;
+  cursor: pointer;
+}
+
 .cart .cart-content > div:nth-of-type(5) .number > button:nth-of-type(1) {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -690,12 +719,13 @@ ol {
           align-items: center;
   width: 28px;
   height: 28px;
-  color: #DDD;
-  background-color: #fff;
+  color: #333;
+  background-color: #f6f6f6;
   font-size: 16px;
   border: 1px solid #ddd;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  outline: none;
 }
 
 .cart .cart-content > div:nth-of-type(5) .number > button:nth-of-type(2) {
@@ -717,15 +747,20 @@ ol {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   margin-left: -1px;
+  outline: none;
 }
 
 .cart .cart-content > div:nth-of-type(6) {
+  margin-top: 38px;
+  float: left;
   width: 106px;
   font-size: 14px;
   color: #FF3333;
 }
 
 .cart .cart-content > div:nth-of-type(7) {
+  float: right;
+  margin-top: -18px;
   width: 105px;
   font-size: 14px;
   color: #333;

@@ -1,0 +1,181 @@
+define(['jcookie'], function() {
+    return {
+        init: function() {
+
+            //渲染列表
+            (function() {
+                function renderlist(sid, num) {
+                    $.ajax({
+                        url: 'http://localhost/360/projectname/php/360json.php',
+                        dataType: 'json'
+                    }).done((data) => {
+                        let str = ''
+                        $.each(data, function(index, value) {
+                            if (sid === value.sid) {
+
+                                let $clonebox = $('.cart-content:hidden').clone(true, true); //克隆隐藏元素
+                                $clonebox.find('#pic').attr('src', value.url);
+                                $clonebox.find('#pic').attr('sid', value.sid);
+                                $clonebox.find('#title').html(value.title);
+                                $clonebox.find('#price').html(value.price);
+                                $clonebox.find('#sailnumber').val(num);
+                                //计算单个商品的价格
+                                $clonebox.find('#calc').html((value.price * num).toFixed(2));
+                                $clonebox.css('display', 'block');
+                                $('.wrap-box').append($clonebox);
+
+                                calcprice(); //计算总价
+                            }
+                        })
+                    })
+                }
+                if ($.cookie('cookiesid') && $.cookie('cookienum')) {
+                    let s = $.cookie('cookiesid').split(',')
+                    let n = $.cookie('cookienum').split(',')
+                    $.each(s, function(index, value) {
+                        renderlist(s[index], n[index])
+                    })
+                }
+            })();
+
+            // //计算总价
+            function calcprice() {
+                let $sum = 0; //商品的件数
+                let $count = 0; //商品的总价
+                $('.cart-content:visible').each(function(index, ele) {
+                    if ($(ele).find('.check').prop('checked')) { //复选框勾选
+                        console.log(parseFloat($(ele).find('#calc').html()))
+                        $sum += parseInt($(ele).find('#sailnumber').val());
+                        $count += parseFloat($(ele).find('#calc').html());
+                    }
+                });
+                $('.cart-resolve').find('i').html($sum);
+                $('.cart-resolve').find('em').html($count.toFixed(2));
+            }
+
+            //全选
+            $('.allsel').on('change', function() {
+                $('.cart-content').find(':checkbox').prop('checked', $(this).prop('checked'));
+                $('.allsel').prop('checked', $(this).prop('checked'));
+                calcprice(); //计算总价
+            });
+            let $inputs = $('.cart-content:visible').find(':checkbox');
+            $('.wrap-box').on('change', $inputs, function() {
+                //$(this):被委托的元素，checkbox
+                if ($('.cart-content:visible').find(':checkbox').length === $('.cart-content:visible').find('input:checked').size()) {
+                    $('.allsel').prop('checked', true);
+                } else {
+                    $('.allsel').prop('checked', false);
+                }
+                calcprice(); //计算总价
+            });
+
+            //5.数量的改变
+            $('.quantity-add').on('click', function() {
+                let $num = $(this).parents('.cart-content').find('#sailnumber').val();
+                $num++;
+                $(this).parents('.cart-content').find('#sailnumber').val($num);
+
+                $(this).parents('.cart-content').find('#calc').html(calcsingleprice($(this)));
+                calcprice(); //计算总价
+                setcookie($(this));
+            });
+
+            $('.quantity-down').on('click', function() {
+                let $num = $(this).parents('.cart-content').find('#sailnumber').val();
+                $num--;
+                if ($num < 1) {
+                    $num = 1;
+                }
+                $(this).parents('.cart-content').find('#sailnumber').val($num);
+                $(this).parents('.cart-content').find('#calc').html(calcsingleprice($(this)));
+                calcprice(); //计算总价
+                setcookie($(this));
+            });
+
+            $('#sailnumber').on('input', function() {
+                let $reg = /^\d+$/g; //只能输入数字
+                let $value = $(this).val();
+                if (!$reg.test($value)) { //不是数字
+                    $(this).val(1);
+                }
+                $(this).parents('.cart-content').find('#calc').html(calcsingleprice($(this)));
+                calcprice(); //计算总价
+                setcookie($(this));
+            });
+
+            //计算单价
+            function calcsingleprice(obj) { //obj元素对象
+                let $dj = parseFloat(obj.parents('.cart-content').find('#price').html());
+                let $num = parseInt(obj.parents('.cart-content').find('#sailnumber').val());
+                return ($dj * $num).toFixed(2)
+            }
+
+            //将改变后的数量存放到cookie中
+            let arrsid = []; //存储商品的编号。
+            let arrnum = []; //存储商品的数量。
+            function cookietoarray() {
+                if ($.cookie('cookiesid') && $.cookie('cookienum')) {
+                    arrsid = $.cookie('cookiesid').split(','); //获取cookie 同时转换成数组。[1,2,3,4]
+                    arrnum = $.cookie('cookienum').split(','); //获取cookie 同时转换成数组。[12,13,14,15]
+                } else {
+                    arrsid = [];
+                    arrnum = [];
+                }
+            }
+
+            function setcookie(obj) {
+                cookietoarray();
+                let $sid = obj.parents('.cart-content').find('#pic').attr('sid');
+                arrnum[$.inArray($sid, arrsid)] = obj.parents('.cart-content').find('#sailnumber').val();
+                $.cookie('cookienum', arrnum, { expires: 10, path: '/' });
+            }
+
+            //6.删除
+            function delcookie(sid, arrsid) { //sid:当前删除的sid  arrsid:存放sid的数组[3,5,6,7]
+                let $index = -1; //删除的索引位置
+                $.each(arrsid, function(index, value) {
+                    if (sid === value) {
+                        $index = index;
+                    }
+                });
+                arrsid.splice($index, 1);
+                arrnum.splice($index, 1);
+
+                $.cookie('cookiesid', arrsid, { expires: 10, path: '/' });
+                $.cookie('cookienum', arrnum, { expires: 10, path: '/' });
+            }
+
+            $('.del-one').on('click', function() {
+                cookietoarray();
+                if (window.confirm('你确定要删除吗?')) {
+                    $(this).parents('.cart-content').remove();
+                    delcookie($(this).parents('.cart-content').find('#pic').attr('sid'), arrsid);
+                    calcprice(); //计算总价
+                }
+            });
+
+            $('.del-all').on('click', function() {
+                cookietoarray();
+                if (window.confirm('你确定要全部删除吗?')) {
+                    $('.cart-content:visible').each(function() {
+                        if ($(this).find(':checkbox').is(':checked')) { //判断复选框是否选中
+                            $(this).remove();
+                            delcookie($(this).find('#pic').attr('sid'), arrsid);
+                        }
+                    });
+                    calcprice(); //计算总价
+                }
+            });
+
+
+
+
+
+
+
+
+
+        }
+    }
+})
