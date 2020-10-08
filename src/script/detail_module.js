@@ -6,7 +6,7 @@ define([], function() {
                 let $datasid = location.search.substring(1).split('=')[1]
 
                 $.ajax({
-                    url: 'http://localhost/360/projectname/php/getsid.php',
+                    url: 'http://192.168.13.13/360/projectname/php/getsid.php',
                     data: {
                         sid: $datasid
                     },
@@ -121,8 +121,8 @@ define([], function() {
                     }
                     $('#tutu').animate({
                         left: -($num - 5) * $('#tutu img').eq(0).outerWidth(true)
-                    })
 
+                    })
                 })
                 $('.five-spic .left').on('click', function() {
                     if ($num > 5) {
@@ -139,7 +139,6 @@ define([], function() {
                             })
                         }
                     }
-                    console.log($num)
 
                 })
 
@@ -176,23 +175,18 @@ define([], function() {
                 }
 
                 $('.addcart').on('click', function() {
-                    //获取当前商品对应的sid
                     let $sid = $(this).parents('.content').find('#spic').attr('sid');
-                    //判断是第一次点击还是多次点击
-                    //多次点击
-                    //$.inArray(value,array,[fromIndex])
-                    //确定第一个参数在数组中的位置，从0开始计数(如果没有找到则返回 -1 )。
+
                     cookie();
-                    if ($.inArray($sid, arrsid) != -1) { //$sid存在，商品列表存在，数量累加
-                        //先取出cookie中存在的数量+当前添加的数量，一起添加到cookie中。
-                        let $num = parseInt(arrnum[$.inArray($sid, arrsid)]) + parseInt($('#shuzi').val()); //取值
-                        arrnum[$.inArray($sid, arrsid)] = $num; //赋值
+                    if ($.inArray($sid, arrsid) != -1) {
+                        let $num = parseInt(arrnum[$.inArray($sid, arrsid)]) + parseInt($('#shuzi').val());
+                        arrnum[$.inArray($sid, arrsid)] = $num;
                         $.cookie('cookienum', arrnum, { expires: 10, path: '/' });
                     } else {
-                        //第一次点击加入购物车按钮,将商品的sid和商品的数量放到提前准备的数组里面，然后将数组传入cookie.
-                        arrsid.push($sid); //将编号$sid push到arrsid数组中
+
+                        arrsid.push($sid);
                         $.cookie('cookiesid', arrsid, { expires: 10, path: '/' });
-                        arrnum.push($('#shuzi').val()); //将数量push到arrnum数组中
+                        arrnum.push($('#shuzi').val());
                         $.cookie('cookienum', arrnum, { expires: 10, path: '/' });
                     }
                 });

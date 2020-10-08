@@ -6,14 +6,13 @@ define(['jcookie'], function() {
             (function() {
                 function renderlist(sid, num) {
                     $.ajax({
-                        url: 'http://localhost/360/projectname/php/360json.php',
+                        url: 'http://192.168.13.13/360/projectname/php/360json.php',
                         dataType: 'json'
                     }).done((data) => {
-                        let str = ''
                         $.each(data, function(index, value) {
                             if (sid === value.sid) {
 
-                                let $clonebox = $('.cart-content:hidden').clone(true, true); //克隆隐藏元素
+                                let $clonebox = $('.cart-content:hidden').clone(true, true);
                                 $clonebox.find('#pic').attr('src', value.url);
                                 $clonebox.find('#pic').attr('sid', value.sid);
                                 $clonebox.find('#title').html(value.title);
@@ -40,11 +39,10 @@ define(['jcookie'], function() {
 
             // //计算总价
             function calcprice() {
-                let $sum = 0; //商品的件数
-                let $count = 0; //商品的总价
+                let $sum = 0;
+                let $count = 0;
                 $('.cart-content:visible').each(function(index, ele) {
                     if ($(ele).find('.check').prop('checked')) { //复选框勾选
-                        console.log(parseFloat($(ele).find('#calc').html()))
                         $sum += parseInt($(ele).find('#sailnumber').val());
                         $count += parseFloat($(ele).find('#calc').html());
                     }
@@ -57,7 +55,7 @@ define(['jcookie'], function() {
             $('.allsel').on('change', function() {
                 $('.cart-content').find(':checkbox').prop('checked', $(this).prop('checked'));
                 $('.allsel').prop('checked', $(this).prop('checked'));
-                calcprice(); //计算总价
+                calcprice();
             });
             let $inputs = $('.cart-content:visible').find(':checkbox');
             $('.wrap-box').on('change', $inputs, function() {
@@ -67,7 +65,7 @@ define(['jcookie'], function() {
                 } else {
                     $('.allsel').prop('checked', false);
                 }
-                calcprice(); //计算总价
+                calcprice();
             });
 
             //5.数量的改变
@@ -77,7 +75,7 @@ define(['jcookie'], function() {
                 $(this).parents('.cart-content').find('#sailnumber').val($num);
 
                 $(this).parents('.cart-content').find('#calc').html(calcsingleprice($(this)));
-                calcprice(); //计算总价
+                calcprice();
                 setcookie($(this));
             });
 
@@ -89,35 +87,36 @@ define(['jcookie'], function() {
                 }
                 $(this).parents('.cart-content').find('#sailnumber').val($num);
                 $(this).parents('.cart-content').find('#calc').html(calcsingleprice($(this)));
-                calcprice(); //计算总价
+                calcprice();
                 setcookie($(this));
             });
 
             $('#sailnumber').on('input', function() {
-                let $reg = /^\d+$/g; //只能输入数字
+                let $reg = /^\d+$/g;
                 let $value = $(this).val();
-                if (!$reg.test($value)) { //不是数字
+                if (!$reg.test($value)) {
                     $(this).val(1);
                 }
                 $(this).parents('.cart-content').find('#calc').html(calcsingleprice($(this)));
-                calcprice(); //计算总价
+                calcprice();
                 setcookie($(this));
             });
 
             //计算单价
-            function calcsingleprice(obj) { //obj元素对象
+            function calcsingleprice(obj) {
                 let $dj = parseFloat(obj.parents('.cart-content').find('#price').html());
                 let $num = parseInt(obj.parents('.cart-content').find('#sailnumber').val());
                 return ($dj * $num).toFixed(2)
             }
 
-            //将改变后的数量存放到cookie中
-            let arrsid = []; //存储商品的编号。
-            let arrnum = []; //存储商品的数量。
+
+            let arrsid = [];
+            let arrnum = [];
+
             function cookietoarray() {
                 if ($.cookie('cookiesid') && $.cookie('cookienum')) {
-                    arrsid = $.cookie('cookiesid').split(','); //获取cookie 同时转换成数组。[1,2,3,4]
-                    arrnum = $.cookie('cookienum').split(','); //获取cookie 同时转换成数组。[12,13,14,15]
+                    arrsid = $.cookie('cookiesid').split(',');
+                    arrnum = $.cookie('cookienum').split(',');
                 } else {
                     arrsid = [];
                     arrnum = [];
@@ -127,13 +126,14 @@ define(['jcookie'], function() {
             function setcookie(obj) {
                 cookietoarray();
                 let $sid = obj.parents('.cart-content').find('#pic').attr('sid');
+                console.log($sid)
                 arrnum[$.inArray($sid, arrsid)] = obj.parents('.cart-content').find('#sailnumber').val();
                 $.cookie('cookienum', arrnum, { expires: 10, path: '/' });
             }
 
             //6.删除
-            function delcookie(sid, arrsid) { //sid:当前删除的sid  arrsid:存放sid的数组[3,5,6,7]
-                let $index = -1; //删除的索引位置
+            function delcookie(sid, arrsid) {
+                let $index = -1;
                 $.each(arrsid, function(index, value) {
                     if (sid === value) {
                         $index = index;
@@ -151,7 +151,7 @@ define(['jcookie'], function() {
                 if (window.confirm('你确定要删除吗?')) {
                     $(this).parents('.cart-content').remove();
                     delcookie($(this).parents('.cart-content').find('#pic').attr('sid'), arrsid);
-                    calcprice(); //计算总价
+                    calcprice();
                 }
             });
 
@@ -164,18 +164,9 @@ define(['jcookie'], function() {
                             delcookie($(this).find('#pic').attr('sid'), arrsid);
                         }
                     });
-                    calcprice(); //计算总价
+                    calcprice();
                 }
             });
-
-
-
-
-
-
-
-
-
         }
     }
 })

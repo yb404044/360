@@ -19,7 +19,7 @@ $pagesize = 10; //单个页面展示的数据条数
 //获取所有的数据
 $result = $conn->query("select * from 360goods"); //获取数据的结果集(记录集)
 
-$num = $result->num_rows; //记录集的总条数  22
+$num = $result->num_rows; //记录集的总条数  30
 
 $pagenum = ceil($num / $pagesize); //获取页数  3
 

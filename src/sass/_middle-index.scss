@@ -667,7 +667,14 @@
             background-position: -172px -104px;
         }
     }
-    >span:nth-of-type(2) {
+    >img {
+        position: absolute;
+        left: -122px;
+        top: 542px;
+        width: 128px;
+        height: 230;
+    }
+    >section {
         width: 39px;
         height: 36px;
         display: flex;
@@ -675,6 +682,17 @@
         align-items: center;
         position: absolute;
         bottom: 214px;
+        i {
+            z-index: 2;
+            background: url(https://p.ssl.qhimg.com/t011705ed887cfa0629.png) no-repeat;
+            display: block;
+            height: 24px;
+            position: absolute;
+            right: 35px;
+            top: -180px;
+            width: 24px;
+            cursor: pointer;
+        }
         b {
             width: 20px;
             height: 20px;
@@ -683,7 +701,7 @@
             background-position: -172px -154px;
         }
     }
-    >span:nth-of-type(3) {
+    >span:nth-of-type(2) {
         width: 39px;
         height: 36px;
         display: flex;

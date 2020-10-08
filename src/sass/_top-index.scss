@@ -45,6 +45,10 @@
                        }
                    }
                    form {
+                       >span {
+                           font-size: 13px;
+                           text-indent: 6px;
+                       }
                        display: flex;
                        flex-direction: column;
                        justify-content: center;
@@ -180,6 +184,7 @@
                        flex-direction: column;
                        justify-content: center;
                        >input:nth-of-type(1) {
+                           outline: none;
                            margin-top: 30px;
                            width: 300px;
                            height: 42px;
@@ -190,15 +195,20 @@
                        }
                        >input:nth-of-type(2) {
                            margin-top: 15px;
-                           margin-bottom: 15px;
                            width: 300px;
                            height: 42px;
                            border-radius: 2px;
                            border: 1px solid #ddd;
                            font-size: 14px;
                            text-indent: 10px;
+                           outline: none;
+                       }
+                       >span {
+                           font-size: 13px;
+                           text-indent: 6px;
                        }
                        .deng {
+                           margin-top: 15px;
                            width: 300px;
                            height: 42px;
                            border-color: #36b447;
@@ -530,14 +540,69 @@
                        background: rgba(51, 51, 51, 0.7);
                        display: none;
                        >div.item {
+                           padding-top: 20px;
                            z-index: 0;
                            width: 950px;
-                           height: 530px;
+                           height: 510px;
                            display: none;
-                           a {
-                               font-size: 25px;
-                               color: cornsilk;
-                           }
+                           background-color: #fff;
+                       }
+                   }
+               }
+           }
+           
+           .twomenu {
+               >div:hover {
+                   color: #999;
+               }
+               >div {
+                   width: 67px;
+                   height: 24px;
+                   color: #333;
+                   font-size: 14px;
+                   margin-top: 20px;
+                   margin-left: 35px;
+                   float: left;
+                   border-right: 1px solid #000;
+               }
+               >ul {
+                   width: 763px;
+                   float: left;
+                   margin-bottom: 15px;
+               }
+               >ul li {
+                   width: 231px;
+                   height: 65px;
+                   margin: 0px 15px 19px 0px;
+                   font-size: 14px;
+                   display: flex;
+                   float: left;
+                   >img {
+                       margin: 0 5px 0 5px;
+                       width: 65px;
+                       height: 65px;
+                   }
+                   p {
+                       display: flex;
+                       flex-direction: column;
+                       font-size: 14px;
+                       color: #666;
+                       >strong {
+                           background: rgba(228, 42, 42, 1);
+                           border-radius: 3px;
+                           color: #fff;
+                           font-size: 12px;
+                           width: 28px;
+                           height: 15px;
+                           line-height: 13px;
+                           text-align: center;
+                           display: inline-block;
+                       }
+                       >span:hover {
+                           color: #999;
+                       }
+                       >span {
+                           color: #000;
                        }
                    }
                }
